@@ -70,9 +70,9 @@ body { background:var(--creme); color:var(--escuro); font-family:'Montserrat',sa
 .mentor-p { font-size:14px; color:var(--texto); line-height:1.9; margin-bottom:14px; }
 .mentor-p em { font-style:italic; color:var(--bordo); }
 @media (max-width:600px) {
-  .mentor-full { flex-direction:column; }
-  .mentor-foto { flex:none; height:280px; }
-  .mentor-texto { padding:32px 24px; }
+  .mentor-full { flex-direction:row; min-height:320px; }
+  .mentor-foto { flex:0 0 45%; height:auto; }
+  .mentor-texto { padding:24px 16px; }
 }
 
 /* PROGRAMA */
@@ -170,7 +170,7 @@ body { background:var(--creme); color:var(--escuro); font-family:'Montserrat',sa
     <span class="count-sep">·</span>
     <div class="count-unit"><span class="count-num" id="secs">00</span><span class="count-label">seg</span></div>
   </div>
-  <a href="#lista-espera" class="barra-btn">Para seres a primeira a receber · subscreve aqui gratuitamente</a>
+  <a href="https://embodiementbydesign.substack.com/subscribe" target="_blank" class="barra-btn">Para seres a primeira a receber · subscreve aqui gratuitamente</a>
 </div>
 
 <!-- HERO -->
@@ -179,7 +179,7 @@ body { background:var(--creme); color:var(--escuro); font-family:'Montserrat',sa
   <h1 class="hero-titulo">Rituals</h1>
   <p class="hero-headline">Chega de viver a vida de outra pessoa.</p>
   <p class="hero-sub">O Rituals dá-te o único plano que nunca vai funcionar para mais ninguém · porque foi feito com os teus dados.</p>
-  <a href="#lista-espera" class="btn-principal">Para seres a primeira a receber · subscreve aqui gratuitamente →</a>
+  <a href="https://embodiementbydesign.substack.com/subscribe" target="_blank" class="btn-principal">Para seres a primeira a receber · subscreve aqui gratuitamente →</a>
 </div>
 
 <!-- CORPO -->
@@ -325,7 +325,7 @@ body { background:var(--creme); color:var(--escuro); font-family:'Montserrat',sa
     <div class="resumo-investimento">
       <div class="resumo-inv-label">O teu investimento hoje</div>
       <div class="resumo-inv-valor">27€</div>
-      <button class="btn-principal" onclick="document.getElementById('lista-espera').scrollIntoView({behavior:'smooth'})">Para seres a primeira a receber · subscreve aqui gratuitamente →</button>
+      <a href="https://embodiementbydesign.substack.com/subscribe" target="_blank" class="btn-principal" style="display:block;text-align:center;">Para seres a primeira a receber · subscreve aqui gratuitamente →</a>
     </div>
   </div>
 
@@ -334,7 +334,7 @@ body { background:var(--creme); color:var(--escuro); font-family:'Montserrat',sa
     <div class="preco">27€</div>
     <p class="preco-urgencia">Às primeiras 500 mulheres ou até 27 de julho</p>
     <p class="preco-nota">44€ às primeiras 3000 mulheres ou até 27 de agosto · Preço final: 77€</p>
-    <button class="btn-bordo" onclick="document.getElementById('lista-espera').scrollIntoView({behavior:'smooth'})">Para seres a primeira a receber · subscreve aqui gratuitamente →</button>
+    <a href="https://embodiementbydesign.substack.com/subscribe" target="_blank" class="btn-bordo" style="display:block;text-align:center;">Para seres a primeira a receber · subscreves aqui gratuitamente →</a>
   </div>
 
   <div class="divisor"></div>
@@ -383,10 +383,8 @@ body { background:var(--creme); color:var(--escuro); font-family:'Montserrat',sa
   <!-- FORMULÁRIO -->
   <div id="lista-espera" class="form-bloco">
     <div class="form-titulo">Para seres a primeira a saber</div>
-    <p class="form-sub">Deixa o teu email e és a primeira a receber o Rituals quando abrir.</p>
-    <input class="form-input" type="text" placeholder="O teu nome">
-    <input class="form-input" type="email" placeholder="O teu email">
-    <button class="btn-principal" style="max-width:100%;padding:16px;">Para seres a primeira a receber · subscreve aqui gratuitamente</button>
+    <p class="form-sub">Subscreve gratuitamente e és a primeira a receber o Rituals quando abrir.</p>
+    <a href="https://embodiementbydesign.substack.com/subscribe" target="_blank" class="btn-principal" style="max-width:100%;padding:16px;display:block;">Para seres a primeira a receber · subscreve aqui gratuitamente</a>
     <p class="form-nota">Sem spam. Só o essencial.</p>
   </div>
 
