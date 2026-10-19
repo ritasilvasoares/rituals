@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-PT">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F4EEE4">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Regular Vénus">
+<title>Cartão de regulação de Vénus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: um cartão calmo. Escolhes como estás, recebes um gesto de 1 a 3 minutos. */
+:root {
+  --bg: #F4EEE4;
+  --surface: #FBF8F2;
+  --fg: #3D3833;
+  --muted: #6E655C;
+  --line: #DDD2C0;
+  --gold: #B8935A;
+  --terra: #8C4A32;
+  --luz: #E9DDBF;
+  --sombra: #E4CFC4;
+  --chip-on: #3D3833;
+  --chip-on-fg: #F4EEE4;
+  --btn-fg: #FBF8F2;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1F1B18; --surface: #2A2521; --fg: #EFE7DA; --muted: #B3A798; --line: #4A4037;
+    --gold: #D2AE74; --terra: #D9926F; --luz: #3B3322; --sombra: #43302A;
+    --chip-on: #EFE7DA; --chip-on-fg: #1F1B18; --btn-fg: #1F1B18; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1F1B18; --surface: #2A2521; --fg: #EFE7DA; --muted: #B3A798; --line: #4A4037;
+  --gold: #D2AE74; --terra: #D9926F; --luz: #3B3322; --sombra: #43302A;
+  --chip-on: #EFE7DA; --chip-on-fg: #1F1B18; --btn-fg: #1F1B18; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.6; margin: 0; padding-inline: 16px; padding-block: 28px 56px; }
+main { max-width: 640px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+.brand { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(2rem, 7vw, 2.7rem); line-height: 1.1; margin: 8px 0 12px; text-wrap: balance; }
+h1 em { color: var(--terra); font-style: italic; font-weight: 400; }
+.lede { color: var(--muted); margin: 0; max-width: 54ch; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 1.3rem; margin: 0 0 10px; }
+.chips { display: flex; flex-direction: column; gap: 8px; }
+.chip { font: inherit; text-align: left; background: transparent; color: var(--fg); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; cursor: pointer; }
+.chip:hover { border-color: var(--gold); }
+.chip[aria-pressed="true"] { background: var(--chip-on); color: var(--chip-on-fg); border-color: var(--chip-on); }
+.chip:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; }
+.badge { display: inline-block; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; border: 1px solid var(--gold); color: var(--terra); border-radius: 999px; padding: 2px 10px; }
+ol.steps { margin: 0; padding-left: 1.4em; display: flex; flex-direction: column; gap: 10px; }
+ol.steps li::marker { color: var(--gold); font-family: var(--display); }
+.phrase { font-family: var(--display); font-style: italic; font-size: 1.2rem; line-height: 1.4; margin: 0; }
+.ask { background: var(--luz); border-radius: 6px; padding: 14px 16px; margin: 0; }
+.ask b { display: block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 2px; }
+.all { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.all li { border-top: 1px solid var(--line); padding-top: 8px; color: var(--muted); font-size: 15px; }
+.all li b { color: var(--fg); font-family: var(--display); font-size: 1.05rem; }
+.systemic { background: var(--sombra); border-radius: 6px; padding: 16px 18px; margin: 0; }
+.systemic b { display: block; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 4px; }
+.systemic span { font-family: var(--display); font-style: italic; font-size: 1.1rem; line-height: 1.4; }
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 18px; }
+</style>
+<main>
+  <header>
+    <div class="brand">Embodiment by Design · Rita Silva Soares</div>
+    <h1>Cartão de regulação de <em>Vénus</em></h1>
+    <p class="lede">Vénus rege o palato, o tato, os odores agradáveis, os lençóis macios e a doçura. Procurar beleza, arte e harmonia não é vaidade fútil: ajuda a regular o sistema nervoso. A beleza, o toque e o descanso não são luxo, são regulação. Diz como estás e recebe um gesto pequeno.</p>
+  </header>
+  <section aria-labelledby="q">
+    <h2 id="q">Como estás agora?</h2>
+    <div class="chips" id="chips" role="group" aria-label="Como estás agora"></div>
+  </section>
+  <section class="card" id="card" aria-live="polite"></section>
+  <section aria-labelledby="t">
+    <h2 id="t">Os 5 gestos de Vénus</h2>
+    <ul class="all">
+      <li><b>Tato.</b> Mãos no corpo, texturas macias, o peso de um cobertor.</li>
+      <li><b>Beleza.</b> Pousar o olhar em algo bonito, sem fazer mais nada.</li>
+      <li><b>Paladar.</b> Provar devagar algo de que gostas, sem ecrã.</li>
+      <li><b>Olfato.</b> Um cheiro agradável e três respirações.</li>
+      <li><b>Receber.</b> Aceitar uma coisa pequena, sem retribuir logo.</li>
+    </ul>
+  </section>
+  <p class="systemic"><b>Para levar contigo</b><span>A quem pertence o valor que carrego? E é mesmo meu?</span></p>
+  <footer>Pequenos gestos para o sistema nervoso. Não substituem acompanhamento terapêutico quando precisas dele.</footer>
+
+  <details style="border:1px solid var(--line);border-radius:6px;background:var(--surface)">
+    <summary style="cursor:pointer;padding:12px 16px;font-weight:500">Guarda no ecrã do telemóvel, como uma app</summary>
+    <div style="padding:0 16px 16px;font-size:15px;color:var(--muted)">
+      <p style="margin:0 0 8px"><b style="color:var(--fg)">iPhone (Safari):</b> toca no botão de partilhar (o quadrado com a seta para cima) e escolhe “Adicionar ao ecrã principal”. Depois toca em “Adicionar”.</p>
+      <p style="margin:0"><b style="color:var(--fg)">Android (Chrome):</b> toca nos três pontinhos no canto de cima e escolhe “Adicionar ao ecrã principal”. Depois toca em “Adicionar”.</p>
+    </div>
+  </details>
+</main>
+<script>
+var STATES = [
+ {k:"Com pressa, o corpo acelerado", sense:"Tato", dur:"1 a 3 minutos",
+  steps:["Pousa uma mão no peito e a outra na barriga.","Sente a temperatura das mãos sobre o corpo.","Respira em 6-4-6: inspira em 6 tempos, segura em 4, expira em 6. Repete três vezes."],
+  phrase:"Eu sou a minha própria base segura.",
+  ask:"O que é que o meu corpo precisaria agora para abrandar um pouco?"},
+ {k:"Com um vazio, a duvidar do meu valor", sense:"Beleza", dur:"1 a 3 minutos",
+  steps:["Escolhe uma coisa bonita à tua volta: a luz numa janela, uma planta, uma fotografia.","Olha para ela durante um minuto, sem fazer mais nada.","Repara onde, no corpo, o olhar pousa e descansa."],
+  phrase:"O meu valor nasce do meu corpo e da minha conexão com a Terra.",
+  ask:"O que é que eu valorizo em mim e ainda não disse a ninguém?"},
+ {k:"A dar demais", sense:"Receber", dur:"1 a 3 minutos",
+  steps:["Escolhe uma coisa pequena para receber hoje: um elogio, uma ajuda, uma pausa, um café feito por outra pessoa.","Agradece sem acrescentar uma desculpa e sem retribuir logo.","Fica três respirações com a sensação de ter recebido."],
+  phrase:"Eu troco em pé de igualdade. Não me anulo para manter uma falsa paz.",
+  ask:"O que é que eu estou a pedir ao mundo, ou a alguém, que ainda não estou a dar a mim?"},
+ {k:"Longe do corpo", sense:"Paladar e olfato", dur:"1 a 3 minutos",
+  steps:["Escolhe algo com um sabor ou um cheiro de que gostes: fruta, chá, chocolate, uma casca de laranja.","Cheira primeiro. Depois prova devagar, sem ecrã.","Repara em três coisas: a temperatura, a textura e a doçura."],
+  phrase:"Vénus vive no corpo: no que saboreio, no que toco, no que me deixa relaxar.",
+  ask:"Quando foi a última vez que comi, ou cheirei, algo só pelo prazer?"},
+ {k:"Não sei o que sinto", sense:"Coração", dur:"1 a 3 minutos",
+  steps:["Pousa as duas mãos no coração.","Faz três respirações e sente o batimento.","Pergunta e espera pela primeira resposta. Honra-a com uma pequena ação: uma caminhada, um limite, uma palavra gentil, uma refeição bonita."],
+  phrase:"Regresso ao meu coração.",
+  ask:"Do que é que o meu coração precisa hoje?"}
+];
+var cur = 0;
+function esc(x){ return String(x).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+function chips(){
+  document.getElementById("chips").innerHTML = STATES.map(function(s,i){
+    return '<button class="chip" type="button" data-i="'+i+'" aria-pressed="'+(cur===i)+'">'+esc(s.k)+'</button>';
+  }).join("");
+}
+function draw(){
+  var s = STATES[cur];
+  document.getElementById("card").innerHTML =
+    '<div class="meta"><span class="badge">'+esc(s.sense)+'</span><span class="badge">'+esc(s.dur)+'</span></div>'+
+    '<ol class="steps">'+s.steps.map(function(x){ return '<li>'+esc(x)+'</li>'; }).join("")+'</ol>'+
+    '<p class="phrase">“'+esc(s.phrase)+'”</p>'+
+    '<p class="ask"><b>Uma pergunta</b>'+esc(s.ask)+'</p>';
+}
+document.addEventListener("click", function(e){
+  var b = e.target.closest("button[data-i]"); if(!b) return;
+  cur = +b.dataset.i; chips(); draw();
+});
+chips(); draw();
+</script>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-PT">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F4EEE4">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Guia de Vénus">
+<title>Guia Universal de Vénus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+/* Layout: referência de consulta. Duas abas (signos, casas), cartões em grelha, luz e sombra lado a lado. */
+:root {
+  --bg: #F4EEE4;
+  --surface: #FBF8F2;
+  --fg: #3D3833;
+  --muted: #6E655C;
+  --line: #DDD2C0;
+  --gold: #B8935A;
+  --terra: #8C4A32;
+  --luz: #E9DDBF;
+  --sombra: #E4CFC4;
+  --chip-on: #3D3833;
+  --chip-on-fg: #F4EEE4;
+  --btn-fg: #FBF8F2;
+  --display: "Fraunces", Georgia, "Times New Roman", serif;
+  --body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1F1B18; --surface: #2A2521; --fg: #EFE7DA; --muted: #B3A798; --line: #4A4037;
+    --gold: #D2AE74; --terra: #D9926F; --luz: #3B3322; --sombra: #43302A;
+    --chip-on: #EFE7DA; --chip-on-fg: #1F1B18; --btn-fg: #1F1B18; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1F1B18; --surface: #2A2521; --fg: #EFE7DA; --muted: #B3A798; --line: #4A4037;
+  --gold: #D2AE74; --terra: #D9926F; --luz: #3B3322; --sombra: #43302A;
+  --chip-on: #EFE7DA; --chip-on-fg: #1F1B18; --btn-fg: #1F1B18; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55; margin: 0; padding-inline: 16px; padding-block: 28px 56px; }
+main { max-width: 980px; margin-inline: auto; display: flex; flex-direction: column; gap: 28px; }
+.brand { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(2rem, 7vw, 2.9rem); line-height: 1.1; margin: 8px 0 12px; text-wrap: balance; }
+h1 em { color: var(--terra); font-style: italic; font-weight: 400; }
+.lede { color: var(--muted); max-width: 58ch; margin: 0; }
+.legend-wrap { display: flex; flex-direction: column; gap: 10px; }
+.legend-wrap p { margin: 0; color: var(--muted); font-size: 14px; max-width: 64ch; }
+.legend { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.legend div { border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; background: var(--surface); min-width: 0; }
+.legend b { display: block; font-family: var(--display); font-size: 1.05rem; }
+.legend span { color: var(--muted); font-size: 14px; }
+.bar { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; justify-content: space-between; }
+.seg { display: flex; flex-wrap: wrap; gap: 8px; }
+.seg button { font: inherit; font-size: 15px; background: transparent; color: var(--fg); border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--chip-on); color: var(--chip-on-fg); border-color: var(--chip-on); }
+.seg button:focus-visible { outline: 2px solid var(--terra); outline-offset: 2px; }
+.intro { margin: 0; color: var(--muted); max-width: 64ch; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ch { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.ch .g { font-size: 22px; line-height: 1; color: var(--terra); }
+.ch .n { font-family: var(--display); color: var(--gold); font-size: 1.1rem; }
+.ch strong { font-family: var(--display); font-size: 1.25rem; font-weight: 600; }
+.badge { display: inline-block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; border: 1px solid var(--gold); color: var(--terra); border-radius: 999px; padding: 2px 9px; }
+.kv { display: grid; grid-template-columns: 92px 1fr; gap: 3px 10px; margin: 0; font-size: 15px; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; min-width: 0; }
+.nota { margin: 0; padding-left: 10px; border-left: 2px solid var(--gold); color: var(--muted); font-size: 14px; }
+.ld { border-radius: 6px; padding: 10px 12px; font-size: 15px; }
+.ld.luz { background: var(--luz); }
+.ld.sombra { background: var(--sombra); }
+.ld b { display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 2px; }
+.q { font-family: var(--display); font-style: italic; margin: 0; font-size: 1.02rem; }
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 18px; }
+@media (max-width: 460px) { .kv { grid-template-columns: 1fr; } .kv dt { margin-top: 4px; } }
+</style>
+<main>
+  <header>
+    <div class="brand">Embodiment by Design · Rita Silva Soares</div>
+    <h1>Guia universal de <em>Vénus</em></h1>
+    <p class="lede">Vénus nos 12 signos (o como) e nas 12 casas (o onde). Amor, dinheiro, corpo, valor próprio e magnetismo, sempre com os dois lados: a luz e a sombra.</p>
+  </header>
+  <section class="legend-wrap" aria-label="Como cada signo recebe Vénus">
+    <p>Nem todos os signos recebem Vénus da mesma maneira. Nada disto é bom ou mau.</p>
+    <div class="legend">
+      <div><b>Em casa</b><span>Expressa-se com facilidade: Touro e Balança.</span></div>
+      <div><b>No seu melhor</b><span>Vénus honrada: Peixes.</span></div>
+      <div><b>Fora de casa</b><span>Pede mais consciência e mais escolha: Carneiro e Escorpião.</span></div>
+      <div><b>Desconfortável</b><span>Pede paciência e cuidado: Virgem.</span></div>
+    </div>
+  </section>
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Ver"><button type="button" data-tab="s" aria-pressed="true">12 signos</button><button type="button" data-tab="h" aria-pressed="false">12 casas</button></div>
+    <div class="seg" role="group" aria-label="Lado"><button type="button" data-side="ambas" aria-pressed="true">Luz e sombra</button><button type="button" data-side="luz" aria-pressed="false">Só luz</button><button type="button" data-side="sombra" aria-pressed="false">Só sombra</button></div>
+  </div>
+  <p class="intro" id="intro"></p>
+  <div class="grid" id="grid"></div>
+  <footer>Todos os planetas, signos e casas têm um lado de luz e um lado de sombra. Não é bom nem mau: a pergunta é em que lado estou a viver.</footer>
+
+  <details style="border:1px solid var(--line);border-radius:6px;background:var(--surface)">
+    <summary style="cursor:pointer;padding:12px 16px;font-weight:500">Guarda no ecrã do telemóvel, como uma app</summary>
+    <div style="padding:0 16px 16px;font-size:15px;color:var(--muted)">
+      <p style="margin:0 0 8px"><b style="color:var(--fg)">iPhone (Safari):</b> toca no botão de partilhar (o quadrado com a seta para cima) e escolhe “Adicionar ao ecrã principal”. Depois toca em “Adicionar”.</p>
+      <p style="margin:0"><b style="color:var(--fg)">Android (Chrome):</b> toca nos três pontinhos no canto de cima e escolhe “Adicionar ao ecrã principal”. Depois toca em “Adicionar”.</p>
+    </div>
+  </details>
+</main>
+<script>
+var SIGNS = [
+ {k:"Carneiro",g:"♈︎",dig:"Fora de casa",amor:"direta, independente e impulsiva",din:"atrai por iniciativa e coragem",cor:"ação própria e dinamismo",luz:"coragem, honestidade, iniciativa, liberdade",som:"impulsividade, impaciência, uma franqueza que fere sem querer, fugir quando o amor pede compromisso",nota:"Uma Vénus em Carneiro é pouco venusiana no sentido tradicional: independente, direta, arrojada, precisa de liberdade e preserva o seu individualismo. Demonstra afeto de forma franca, por vezes brusca, com um gosto estético chamativo.",fr:"O meu magnetismo é a minha coragem pioneira."},
+ {k:"Touro",g:"♉︎",dig:"Em casa",amor:"sensorial, leal, física e estável",din:"construtora e retentora de riqueza",cor:"prazer, toque e ritmo orgânico",luz:"presença, estabilidade, prazer dos sentidos, abundância tranquila",som:"apego, teimosia, medo de perder",fr:"O meu magnetismo é a segurança do meu corpo."},
+ {k:"Gémeos",g:"♊︎",dig:"",amor:"comunicativa e estimulada pelo intelecto",din:"atrai pela escrita, vendas e ideias",cor:"inteligência e flexibilidade",luz:"curiosidade, leveza, a conversa que liga, flexibilidade",som:"dispersão, superficialidade, falar do amor em vez de o sentir",fr:"O meu magnetismo é a força das minhas palavras."},
+ {k:"Caranguejo",g:"♋︎",dig:"",amor:"nutritiva, protetora e focada no lar",din:"atrai criando segurança e acolhimento",cor:"intuição e capacidade de nutrir",luz:"cuidado, acolhimento, intuição, sentido de lar",som:"sufocar, ressentimento calado, cuidar para que precisem de mim",fr:"O meu magnetismo é o meu poder de nutrir."},
+ {k:"Leão",g:"♌︎",dig:"",amor:"generosa, radiante e romântica",din:"atrai por visibilidade e prestígio",cor:"brilho pessoal e presença régia",luz:"generosidade, calor, a alegria de me mostrar",som:"precisar de aplauso, orgulho ferido, dar para receber admiração",fr:"O meu magnetismo é a luz do meu coração."},
+ {k:"Virgem",g:"♍︎",dig:"Desconfortável",amor:"dedicada, prática e atenta aos detalhes",din:"atrai por otimização, eficiência e sistemas",cor:"saúde, rotinas e serviço útil",luz:"dedicação, atenção ao detalhe, o amor dito em atos concretos",som:"autocrítica, perfecionismo, achar que nunca é suficiente, criticar o outro",fr:"O meu magnetismo é a minha mestria e saúde."},
+ {k:"Balança",g:"♎︎",dig:"Em casa",amor:"harmoniosa, diplomática e recíproca",din:"atrai por parcerias, estética e acordos",cor:"beleza, equilíbrio e elegância",luz:"harmonia, reciprocidade, justiça, beleza",som:"evitar o conflito, anular-me para manter uma falsa paz, indecisão",fr:"O meu magnetismo é a harmonia e justiça."},
+ {k:"Escorpião",g:"♏︎",dig:"Fora de casa",amor:"intensa, visceral e focada na fusão",din:"atrai em investimentos e psicologia",cor:"regeneração e cura do trauma",luz:"profundidade, lealdade, capacidade de transformar, verdade",som:"ciúme, controlo, tudo ou nada, pôr o outro à prova",nota:"É o signo desta retrogradação (3 a 25 de outubro de 2026).",fr:"O meu magnetismo é o meu poder de transmutação."},
+ {k:"Sagitário",g:"♐︎",dig:"",amor:"expansiva, livre e otimista",din:"atrai por mentorias, ensino e viagens",cor:"visão ampla e espaço pessoal",luz:"liberdade, otimismo, honestidade, expansão",som:"fugir do compromisso, prometer demais, achar que o amor está sempre noutro lado",fr:"O meu magnetismo é a minha fé inabalável."},
+ {k:"Capricórnio",g:"♑︎",dig:"",amor:"sólida, responsável e de longo prazo",din:"atrai por impérios e disciplina",cor:"respeito, maturidade e sobriedade",luz:"compromisso, lealdade, constância, construir a longo prazo",som:"frieza, achar que o amor é preciso merecer, o dever antes do afeto",fr:"O meu magnetismo é a minha maturidade sólida."},
+ {k:"Aquário",g:"♒︎",dig:"",amor:"livre, visionária e sem preconceitos",din:"atrai pelo digital e redes sociais",cor:"autenticidade e singularidade",luz:"liberdade, amizade, originalidade, aceitar a diferença",som:"distância emocional, fugir da intimidade, desligar quando fica intenso",fr:"O meu magnetismo é a minha originalidade."},
+ {k:"Peixes",g:"♓︎",dig:"No seu melhor",amor:"incondicional, romântica e mística",din:"atrai por arte, intuição e cura",cor:"sensibilidade e conexão de alma",luz:"compaixão, romantismo, entrega, ligação de alma",som:"idealizar, perder-me no outro, confundir salvar com amar, fronteiras difusas",fr:"O meu magnetismo é a minha compaixão."}
+];
+var HOUSES = [
+ {t:"Autoimagem e estilo",m:"na autoimagem e no estilo. A autoestima dita a atração do dinheiro e do amor",luz:"presença magnética, autoestima, estilo próprio",som:"viver da imagem, depender do olhar do outro"},
+ {t:"Finanças pessoais",m:"nas finanças pessoais. Abundância direta, ligada ao grau de valor próprio",luz:"saber o meu valor e cobrá-lo, receber com facilidade",som:"medir o meu valor pelo que ganho, escassez, culpa de receber"},
+ {t:"Comunicação e voz",m:"na comunicação e na voz. Geração de riqueza via escrita, cursos e diálogos",luz:"uma voz que atrai, escrita e conversa que ligam",som:"falar para agradar, calar o que penso, dispersar-me"},
+ {t:"Lar e ninho",m:"no lar e no ninho. Prosperidade ao criar um santuário e ao curar as raízes familiares",luz:"o lar como santuário, raízes curadas, sentir-me em casa em mim",som:"lealdades familiares invisíveis, repetir o ninho da infância, não sair do passado"},
+ {t:"Prazer e criatividade",m:"no prazer e na criatividade. A abundância flui pelos orgasmos, pela arte, pelo palco e pelos filhos",luz:"prazer, criar, brincar, a alegria de me mostrar",som:"só me dar prazer depois de o merecer, medo de brilhar, o amor vivido como drama"},
+ {t:"Rotina e saúde",m:"na rotina e na saúde. Sucesso através do autocuidado e da regulação do corpo",luz:"autocuidado, rotinas que me regulam, trabalho com sentido",som:"exaustão, servir demais, tratar o corpo como máquina, perfecionismo"},
+ {t:"Parcerias e casamento",m:"nas parcerias e no casamento. Atração através de acordos em pé de igualdade",luz:"relações onde posso relaxar e ser eu, receber sem ter de merecer, acordos justos",som:"depender do outro para sentir que mereço, dar demais para que me escolham, ficar por medo de perder ou fugir pelo mesmo medo"},
+ {t:"Intimidade e recursos partilhados",m:"na intimidade e nos recursos partilhados. Geração de riqueza por fusão e investimentos",luz:"intimidade profunda, confiança, partilhar recursos, renascer",som:"fusão, controlo, dependência emocional ou financeira, segredos"},
+ {t:"Expansão e mentorias",m:"na expansão e nas mentorias. Abundância ao ensinar, publicar e abrir caminhos",luz:"ensinar, publicar, abrir caminho, fé",som:"dogma, fugir do presente, achar que a verdade está sempre longe"},
+ {t:"Carreira e reputação",m:"na carreira e na reputação. Autoridade profissional e visibilidade de mercado",luz:"autoridade, uma reputação que honra o meu valor, o reconhecimento",som:"viver para a imagem pública, sacrificar o afeto pela carreira, precisar de estatuto"},
+ {t:"Comunidade e redes",m:"na comunidade e nas redes. Riqueza ligada à tribo, ao público e às causas coletivas",luz:"tribo, amizades, causas, uma comunidade que apoia",som:"pertencer à custa de mim, dar-me à causa, esconder-me na multidão"},
+ {t:"Inconsciente e resgate ancestral",m:"no inconsciente e no resgate ancestral. Abundância via cura invisível e espiritualidade",luz:"intuição, compaixão, o retiro que cura, a ligação ao invisível",som:"sacrificar-me, esconder-me, dar sem receber"}
+];
+var INTRO = {
+ s:"O signo diz como Vénus toca: o tom, o estilo e a motivação com que amo, atraio e valorizo.",
+ h:"A casa diz onde Vénus acontece: a área concreta da vida em que amo, atraio e manifesto abundância."
+};
+var st = {tab:"s", side:"ambas"};
+function esc(x){ return String(x).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+function cap(x){ return x.charAt(0).toUpperCase() + x.slice(1); }
+function ld(l, s){
+  var o = "";
+  if(st.side !== "sombra") o += '<div class="ld luz"><b>Luz</b>'+cap(l)+'.</div>';
+  if(st.side !== "luz") o += '<div class="ld sombra"><b>Sombra</b>'+cap(s)+'.</div>';
+  return o;
+}
+function draw(){
+  var h = "";
+  if(st.tab === "s"){
+    h = SIGNS.map(function(s){
+      return '<article class="card"><div class="ch"><span class="g" aria-hidden="true">'+s.g+'</span><strong>'+s.k+'</strong>'+(s.dig?'<span class="badge">'+s.dig+'</span>':'')+'</div>'+
+        '<dl class="kv"><dt>Amor</dt><dd>'+cap(s.amor)+'.</dd><dt>Dinheiro</dt><dd>'+cap(s.din)+'.</dd><dt>Corpo e valor</dt><dd>'+cap(s.cor)+'.</dd></dl>'+
+        (s.nota?'<p class="nota">'+esc(s.nota)+'</p>':'')+
+        ld(s.luz, s.som)+'<p class="q">“'+s.fr+'”</p></article>';
+    }).join("");
+  } else {
+    h = HOUSES.map(function(x, i){
+      return '<article class="card"><div class="ch"><span class="n">Casa '+(i+1)+'</span><strong>'+esc(x.t)+'</strong></div>'+
+        '<p style="margin:0;font-size:15px">Magnetismo '+esc(x.m)+'.</p>'+ld(x.luz, x.som)+'</article>';
+    }).join("");
+  }
+  document.getElementById("intro").textContent = INTRO[st.tab];
+  document.getElementById("grid").innerHTML = h;
+}
+document.addEventListener("click", function(e){
+  var b = e.target.closest("button"); if(!b) return;
+  if(b.dataset.tab){ st.tab = b.dataset.tab; }
+  else if(b.dataset.side){ st.side = b.dataset.side; }
+  else return;
+  document.querySelectorAll("button[data-tab]").forEach(function(x){ x.setAttribute("aria-pressed", String(x.dataset.tab === st.tab)); });
+  document.querySelectorAll("button[data-side]").forEach(function(x){ x.setAttribute("aria-pressed", String(x.dataset.side === st.side)); });
+  draw();
+});
+draw();
+</script>
