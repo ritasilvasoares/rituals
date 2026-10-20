@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rituals · O teu Mapa Biológico Único</title>
+<title>Rituals · O teu Manual Biológico de Rotinas Personalizado</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -17,27 +17,21 @@
 }
 body { background:var(--creme); color:var(--escuro); font-family:'Montserrat',sans-serif; font-weight:300; line-height:1.6; }
 
-/* BARRA */
-.barra-urgencia { background:var(--bordo-claro); color:var(--creme); text-align:center; padding:9px 24px; font-size:11px; letter-spacing:2px; }
-.barra-urgencia strong { color:#f0d0b0; letter-spacing:3px; }
-.barra-countdown { background:var(--bordo); padding:10px 24px; display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap; position:sticky; top:0; z-index:100; }
-.count-unit { text-align:center; min-width:32px; }
-.count-num { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; color:var(--creme); display:block; line-height:1; }
-.count-label { font-size:8px; letter-spacing:1px; text-transform:uppercase; color:rgba(245,237,228,0.5); display:block; }
-.count-sep { color:rgba(245,237,228,0.4); font-size:16px; }
-.barra-btn { background:var(--creme); color:var(--bordo); padding:8px 18px; font-family:'Montserrat',sans-serif; font-size:10px; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; display:inline-block; white-space:nowrap; }
+/* BARRA FIXA */
+.barra-anuncio { background:var(--bordo-claro); color:var(--creme); text-align:center; padding:12px 24px; font-size:11px; letter-spacing:1.5px; position:sticky; top:0; z-index:100; border-bottom:1px solid rgba(245,237,228,0.2); }
+.barra-anuncio strong { color:#f0d0b0; font-weight:500; }
 
 /* HERO */
 .hero { background:var(--bordo); color:var(--creme); padding:80px 24px 64px; text-align:center; }
 .hero-eyebrow { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:rgba(245,237,228,0.5); margin-bottom:20px; }
 .hero-titulo { font-family:'Cormorant Garamond',serif; font-size:clamp(64px,14vw,110px); font-weight:300; font-style:italic; line-height:1; color:var(--creme); margin-bottom:24px; }
-.hero-headline { font-family:'Cormorant Garamond',serif; font-size:clamp(20px,4vw,28px); font-weight:300; font-style:italic; color:rgba(245,237,228,0.85); max-width:560px; margin:0 auto 16px; line-height:1.4; }
-.hero-sub { font-size:clamp(13px,2.5vw,15px); color:rgba(245,237,228,0.6); max-width:440px; margin:0 auto 40px; line-height:1.7; }
-.btn-principal { display:inline-block; background:var(--creme); color:var(--bordo); padding:16px 40px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; text-decoration:none; border:none; cursor:pointer; width:100%; max-width:440px; }
-.btn-bordo { display:inline-block; background:var(--bordo); color:var(--creme); padding:16px 40px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; text-decoration:none; border:none; cursor:pointer; width:100%; max-width:440px; }
+.hero-headline { font-family:'Cormorant Garamond',serif; font-size:clamp(22px,4vw,32px); font-weight:300; font-style:italic; color:rgba(245,237,228,0.95); max-width:680px; margin:0 auto 20px; line-height:1.3; }
+.hero-sub { font-size:clamp(13px,2.5vw,15px); color:rgba(245,237,228,0.75); max-width:600px; margin:0 auto 40px; line-height:1.7; }
+.btn-principal { display:inline-block; background:var(--creme); color:var(--bordo); padding:18px 40px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; text-decoration:none; border:none; cursor:pointer; width:100%; max-width:480px; text-align:center; }
+.btn-bordo { display:inline-block; background:var(--bordo); color:var(--creme); padding:18px 40px; font-family:'Montserrat',sans-serif; font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; text-decoration:none; border:none; cursor:pointer; width:100%; max-width:480px; text-align:center; }
 
 /* CORPO */
-.corpo { max-width:580px; margin:0 auto; padding:64px 24px; }
+.corpo { max-width:640px; margin:0 auto; padding:64px 24px; }
 .secao-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--bordo); margin-bottom:20px; display:flex; align-items:center; gap:12px; }
 .secao-label::after { content:''; flex:1; height:1px; background:var(--areia); }
 .divisor { height:1px; background:var(--areia); margin:48px 0; }
@@ -46,107 +40,60 @@ body { background:var(--creme); color:var(--escuro); font-family:'Montserrat',sa
 .texto em { font-style:italic; color:var(--bordo); }
 
 /* FRUSTRAÇÕES */
-.frase-ancora { font-family:'Cormorant Garamond',serif; font-size:clamp(20px,4.5vw,28px); font-weight:500; color:var(--escuro); line-height:1.4; margin:32px 0; padding:24px 0; border-top:1px solid var(--areia); border-bottom:1px solid var(--areia); }
-.frase-ancora em { font-style:italic; color:var(--bordo); }
+.titulo-secao { font-family:'Cormorant Garamond',serif; font-size:clamp(24px,5vw,34px); font-weight:400; color:var(--escuro); line-height:1.3; margin-bottom:24px; }
+.bullet-frustracao { margin:24px 0; list-style:none; }
+.bullet-frustracao li { padding:14px 0; border-bottom:1px solid var(--areia); font-size:13px; color:var(--texto); line-height:1.7; }
+.bullet-frustracao li strong { color:var(--escuro); }
+.frase-ancora { font-family:'Cormorant Garamond',serif; font-size:clamp(20px,4.5vw,26px); font-weight:500; color:var(--escuro); line-height:1.4; margin:32px 0; padding:24px 0; border-top:1px solid var(--areia); border-bottom:1px solid var(--areia); text-align:center; }
 
-/* POSSIBILIDADES */
-.possibilidade-item { padding:13px 0; border-bottom:1px solid var(--areia); font-size:13px; color:var(--texto); line-height:1.6; display:flex; gap:12px; align-items:flex-start; }
-.possibilidade-item::before { content:'◆'; font-size:6px; color:var(--bordo); margin-top:6px; flex-shrink:0; }
-.possibilidade-item:last-child { border-bottom:none; }
-.frase-final { font-family:'Cormorant Garamond',serif; font-size:clamp(22px,5vw,32px); font-style:italic; color:var(--bordo); text-align:center; line-height:1.3; padding:32px 0; }
-
-/* VEÍCULO */
-.veiculo-bloco { background:rgba(92,36,52,0.07); border-left:3px solid var(--bordo); padding:32px 28px; margin:32px 0; }
-.veiculo-bloco p { font-size:14px; color:var(--texto); line-height:1.8; margin-bottom:12px; }
-.veiculo-bloco p:last-child { margin-bottom:0; }
-.veiculo-bloco strong { color:var(--bordo); }
-
-/* MENTOR — LARGURA TOTAL */
-.mentor-full { display:flex; width:100%; min-height:480px; }
-.mentor-foto { flex:0 0 50%; overflow:hidden; background:var(--areia); }
+/* MENTOR */
+.mentor-full { display:flex; width:100%; min-height:480px; background:var(--creme); border-top:1px solid var(--areia); border-bottom:1px solid var(--areia); }
+.mentor-foto { flex:0 0 45%; overflow:hidden; background:var(--areia); }
 .mentor-foto img { width:100%; height:100%; object-fit:cover; object-position:center 15%; display:block; }
-.mentor-texto { flex:1; background:var(--creme); padding:48px 40px; display:flex; flex-direction:column; justify-content:center; }
+.mentor-texto { flex:1; padding:48px 40px; display:flex; flex-direction:column; justify-content:center; }
 .mentor-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--bordo); margin-bottom:24px; }
-.mentor-p { font-size:14px; color:var(--texto); line-height:1.9; margin-bottom:14px; }
-.mentor-p em { font-style:italic; color:var(--bordo); }
 @media (max-width:600px) {
   .mentor-full { flex-direction:column; }
   .mentor-foto { flex:none; height:280px; }
   .mentor-texto { padding:32px 24px; }
 }
 
-/* PROGRAMA */
-.programa-titulo { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,6vw,42px); font-weight:300; font-style:italic; color:var(--escuro); margin-bottom:6px; }
-.programa-sub { font-size:12px; color:#9a7080; margin-bottom:24px; letter-spacing:1px; }
-.bullet-lista { list-style:none; margin:24px 0; }
-.bullet-lista li { padding:12px 0; border-bottom:1px solid var(--areia); font-size:13px; color:var(--texto); line-height:1.6; display:flex; gap:12px; align-items:flex-start; }
-.bullet-lista li:last-child { border-bottom:none; }
-.bullet-lista li::before { content:'◆'; font-size:6px; color:var(--bordo); margin-top:6px; flex-shrink:0; }
+/* LISTAS & CARTÕES */
+.cartao { border:1px solid var(--areia); padding:20px 24px; background:#fff; margin-bottom:12px; }
+.cartao-num { font-size:10px; font-weight:500; color:var(--bordo); margin-bottom:4px; letter-spacing:1px; }
+.cartao-nome { font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:500; color:var(--escuro); margin-bottom:6px; }
+.cartao-desc { font-size:13px; color:var(--texto); line-height:1.6; }
 
-/* CARTÕES */
-.cartao { border:1px solid var(--areia); padding:20px 24px; background:#fff; margin-bottom:10px; }
-.cartao-nome { font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:500; color:var(--escuro); margin-bottom:6px; }
-.cartao-desc { font-size:12px; color:#7a6a60; line-height:1.6; }
-
-/* PRESENTES */
-.presentes-bloco { background:var(--bordo); color:var(--creme); padding:32px; margin:32px 0; }
-.presentes-eyebrow { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(245,237,228,0.6); margin-bottom:8px; }
-.presentes-titulo { font-family:'Cormorant Garamond',serif; font-size:22px; font-style:italic; color:var(--creme); margin-bottom:16px; line-height:1.4; }
-.presentes-p { font-size:13px; color:rgba(245,237,228,0.8); line-height:1.7; margin-bottom:10px; }
-.presente-item { border-top:1px solid rgba(245,237,228,0.15); padding:14px 0; display:flex; gap:12px; }
-.presente-item::before { content:'✦'; font-size:10px; color:rgba(245,237,228,0.5); flex-shrink:0; margin-top:2px; }
-.presente-nome { color:var(--creme); font-weight:500; display:block; margin-bottom:4px; font-size:13px; }
-.presente-desc { font-size:12px; color:rgba(245,237,228,0.7); line-height:1.5; }
-
-/* PARA QUEM */
-.bloco-creme { background:rgba(92,36,52,0.06); border-left:3px solid var(--bordo); padding:24px 28px; margin-bottom:14px; }
-.bloco-creme h3 { font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:var(--bordo); margin-bottom:14px; }
-.bloco-creme ul { list-style:none; }
-.bloco-creme ul li { font-size:13px; color:var(--texto); padding:7px 0; border-bottom:1px solid rgba(92,36,52,0.1); display:flex; gap:10px; line-height:1.5; }
-.bloco-creme ul li:last-child { border-bottom:none; }
-.bloco-creme ul li::before { content:'·'; color:var(--bordo); flex-shrink:0; }
+/* TABELA PARA QUEM É */
+.tabela-para-quem { width:100%; border-collapse:collapse; margin:24px 0; }
+.tabela-para-quem th { background:var(--bordo); color:var(--creme); font-family:'Cormorant Garamond',serif; font-size:18px; font-weight:400; padding:16px; text-align:left; width:50%; }
+.tabela-para-quem td { padding:16px; border:1px solid var(--areia); font-size:13px; color:var(--texto); vertical-align:top; line-height:1.6; background:#fff; }
+@media (max-width:600px) {
+  .tabela-para-quem, .tabela-para-quem tbody, .tabela-para-quem tr, .tabela-para-quem td, .tabela-para-quem th { display:block; width:100%; }
+  .tabela-para-quem th { text-align:center; }
+}
 
 /* RESUMO */
-.resumo-bloco { background:var(--bordo); padding:40px 32px; margin:32px 0; }
+.resumo-bloco { background:var(--bordo); padding:40px 32px; margin:32px 0; color:var(--creme); }
 .resumo-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(245,237,228,0.6); text-align:center; margin-bottom:24px; }
-.resumo-item { display:flex; justify-content:space-between; align-items:baseline; padding:10px 0; border-bottom:1px solid rgba(245,237,228,0.1); gap:16px; }
-.resumo-item:last-of-type { border-bottom:none; }
-.resumo-nome { font-size:12px; color:rgba(245,237,228,0.75); flex:1; line-height:1.4; }
-.resumo-valor { font-family:'Cormorant Garamond',serif; font-size:15px; color:var(--creme); white-space:nowrap; }
-.resumo-total { margin-top:20px; padding-top:20px; border-top:1px solid rgba(245,237,228,0.2); display:flex; justify-content:space-between; align-items:baseline; }
-.resumo-total-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(245,237,228,0.5); }
-.resumo-total-valor { font-family:'Cormorant Garamond',serif; font-size:13px; color:rgba(245,237,228,0.75); }
-.resumo-investimento { text-align:center; margin-top:28px; padding-top:28px; border-top:1px solid rgba(245,237,228,0.2); }
-.resumo-inv-label { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(245,237,228,0.6); margin-bottom:8px; }
-.resumo-inv-valor { font-family:'Cormorant Garamond',serif; font-size:56px; font-weight:300; color:var(--creme); line-height:1; margin-bottom:20px; }
-
-/* PREÇO */
-.preco-bloco { text-align:center; padding:48px 0; border-top:1px solid var(--areia); border-bottom:1px solid var(--areia); margin:32px 0; }
-.preco-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--bordo); margin-bottom:8px; }
-.preco { font-family:'Cormorant Garamond',serif; font-size:80px; font-weight:300; color:var(--bordo); line-height:1; margin-bottom:8px; }
-.preco-urgencia { font-size:12px; color:var(--bordo); margin-bottom:4px; }
-.preco-nota { font-size:11px; color:#9a8a80; margin-bottom:32px; }
+.resumo-lista { list-style:none; margin-bottom:32px; }
+.resumo-lista li { padding:12px 0; border-bottom:1px solid rgba(245,237,228,0.15); font-size:13px; color:rgba(245,237,228,0.9); display:flex; gap:12px; }
+.resumo-lista li::before { content:'✦'; color:rgba(245,237,228,0.5); font-size:10px; margin-top:2px; }
+.resumo-preço { text-align:center; padding-top:24px; border-top:1px solid rgba(245,237,228,0.2); }
+.resumo-valor { font-family:'Cormorant Garamond',serif; font-size:54px; font-weight:300; color:var(--creme); margin-bottom:16px; line-height:1; }
 
 /* FAQ */
-.faq-item { border-bottom:1px solid var(--areia); padding:20px 0; }
+.faq-item { border-bottom:1px solid var(--areia); padding:24px 0; }
 .faq-item:last-child { border-bottom:none; }
-.faq-p { font-size:13px; font-weight:500; color:var(--escuro); margin-bottom:8px; }
-.faq-r { font-size:13px; color:var(--texto); line-height:1.7; }
+.faq-p { font-family:'Cormorant Garamond',serif; font-size:19px; font-weight:500; color:var(--escuro); margin-bottom:10px; line-height:1.3; }
+.faq-r { font-size:13px; color:var(--texto); line-height:1.8; }
+.faq-r ol, .faq-r ul { margin:12px 0 12px 20px; }
+.faq-r li { margin-bottom:6px; }
 
 /* CARTA */
-.carta-bloco { padding:48px 0; }
-.carta-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--bordo); margin-bottom:32px; display:flex; align-items:center; gap:12px; }
-.carta-label::after { content:''; flex:1; height:1px; background:var(--areia); }
+.carta-bloco { padding:32px 0; }
 .carta-p { font-size:14px; color:var(--texto); line-height:1.9; margin-bottom:20px; }
-.carta-p em { font-style:italic; color:var(--bordo); }
-.carta-p strong { color:var(--escuro); font-weight:500; }
-.assinatura { font-family:'Cormorant Garamond',serif; font-size:22px; font-style:italic; color:var(--bordo); margin-top:32px; }
-
-/* FORMULÁRIO */
-.form-bloco { background:var(--bordo); padding:48px 32px; text-align:center; margin-top:48px; }
-.form-titulo { font-family:'Cormorant Garamond',serif; font-size:28px; font-style:italic; color:var(--creme); margin-bottom:8px; }
-.form-sub { font-size:13px; color:rgba(245,237,228,0.7); margin-bottom:28px; line-height:1.6; }
-.form-nota { font-size:11px; color:rgba(245,237,228,0.3); margin-top:12px; }
+.assinatura { font-family:'Cormorant Garamond',serif; font-size:22px; font-style:italic; color:var(--bordo); margin-top:32px; line-height:1.4; }
 
 /* RODAPÉ */
 .rodape { text-align:center; padding:40px 24px; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#9a7080; border-top:1px solid var(--areia); }
@@ -154,29 +101,17 @@ body { background:var(--creme); color:var(--escuro); font-family:'Montserrat',sa
 </head>
 <body>
 
-<!-- BARRA URGÊNCIA -->
-<div class="barra-urgencia">Preço de lançamento · às primeiras 500 mulheres ou até <strong>27 DE JULHO</strong></div>
-
-<!-- BARRA COUNTDOWN -->
-<div class="barra-countdown">
-  <div style="display:flex;align-items:center;gap:12px;">
-    <div class="count-unit"><span class="count-num" id="days">00</span><span class="count-label">dias</span></div>
-    <span class="count-sep">·</span>
-    <div class="count-unit"><span class="count-num" id="hours">00</span><span class="count-label">horas</span></div>
-    <span class="count-sep">·</span>
-    <div class="count-unit"><span class="count-num" id="mins">00</span><span class="count-label">min</span></div>
-    <span class="count-sep">·</span>
-    <div class="count-unit"><span class="count-num" id="secs">00</span><span class="count-label">seg</span></div>
-  </div>
-  <a href="https://payhip.com/b/ZwzOn" class="barra-btn">Quero o meu mapa · 27€</a>
+<!-- BARRA FIXA -->
+<div class="barra-anuncio">
+  [Acesso Imediato ao Teu Manual Biológico] Valor fixo de <strong>27€</strong> · Pagamento único · Sem subscrições nem prazos de lançamento
 </div>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-eyebrow">Embodiment by Design · Rita Silva Soares</div>
   <h1 class="hero-titulo">Rituals</h1>
-  <p class="hero-headline">Chega de viver a vida de outra pessoa.</p>
-  <p class="hero-sub">O Rituals dá-te o único plano que nunca vai funcionar para mais ninguém · porque foi feito com os teus dados.</p>
+  <p class="hero-headline">O teu corpo não precisa de mais uma lista de tarefas. Precisa do seu próprio manual.</p>
+  <p class="hero-sub">Descobre o teu mapa biológico de rotinas gerado estritamente com os teus dados exatos de nascimento — integrando Neurociência, Human Design, Sistémica e Astrologia Psicossomática.<br><br>Um plano prático, direto e permanente para saíres do esforço, recuperares a tua vitalidade, tomares as decisões certas e viveres em fluidez no teu corpo, na tua família e no teu negócio.</p>
   <a href="https://payhip.com/b/ZwzOn" class="btn-principal">Quero o meu mapa · 27€ pagamento único →</a>
 </div>
 
@@ -184,181 +119,266 @@ body { background:var(--creme); color:var(--escuro); font-family:'Montserrat',sa
 <div class="corpo">
 
   <!-- FRUSTRAÇÕES -->
-  <div class="secao-label">Reconheces isto</div>
-  <p class="texto">Já sabes que o teu corpo importa.<br>Já sabes que és única.<br>Já sabes que há algo dentro de ti que sabe o caminho.</p>
-  <p class="texto">Mas não sabes <em>o que</em> te move.<br>Não sabes <em>como</em> a tua energia funciona.<br>Não sabes <em>o que</em> está a correr por baixo · a decidir por ti, a reagir por ti, a esgotar-te por ti.</p>
-  <p class="texto">E então acordas e segues a rotina de outra pessoa.<br>Decides com base no medo.<br>Ages a partir do que dói · não do que sabes.</p>
+  <div class="secao-label">Problema & Identificação</div>
+  <h2 class="titulo-secao">Já tentaste seguir as rotinas dos outros e o resultado foi exaustão, culpa e frustração?</h2>
+  <p class="texto">Passas a vida a tentar encaixar-te em métodos de produtividade milagrosos, dietas da moda, horários rígidos e conselhos de 'sucesso' que funcionam para toda a gente... menos para ti.</p>
+  
+  <ul class="bullet-frustracao">
+    <li><strong>A mente em guerra constante:</strong> Passas o dia a duvidar de ti, a questionar as tuas escolhas e a tentar resolver a tua vida, a tua saúde e a tua família através da força de vontade.</li>
+    <li><strong>O corpo a pedir trégua:</strong> Acordas sem energia, vives em sobressalto, lidas com sintomas no corpo (digestão, sono, ansiedade) e sentes que estás sempre a correr atrás do tempo.</li>
+    <li><strong>Excesso de informação, zero clareza:</strong> Tens cadernos cheios de cursos, teorias e conceitos mentais, mas na hora de decidir ou agir no dia a dia, continuas perdida/o sem saber qual é o teu próximo passo.</li>
+  </ul>
+
   <div class="frase-ancora">
-    Não é falta de vontade.<br>
-    <em>É estares a viver o mapa de outra pessoa · mesmo acreditando que não.</em>
+    O problema nunca foi a tua falta de disciplina ou de capacidade.<br>
+    <em>O problema é que estavas a tentar conduzir o teu veículo sem o manual de instruções certo.</em>
   </div>
 
   <div class="divisor"></div>
 
-  <!-- POSSIBILIDADES -->
-  <div class="secao-label">E se soubesses o teu mapa</div>
-  <div style="margin:24px 0 32px;">
-    <div class="possibilidade-item">Energia consistente · não porque te forces, mas porque respeitas o teu ritmo único</div>
-    <div class="possibilidade-item">Descanso real · não culpa disfarçada de pausa</div>
-    <div class="possibilidade-item">Presença com os teus filhos · não o que sobra depois de tudo o resto</div>
-    <div class="possibilidade-item">Decisões a partir da intuição e da alma · com base no amor, não no medo</div>
-    <div class="possibilidade-item">Corpo que colabora · não que resiste</div>
-    <div class="possibilidade-item">Casa que flui · não que pesa</div>
-    <div class="possibilidade-item">Construir a tua marca a partir de quem és · porque o dinheiro é uma consequência natural desse alinhamento</div>
-  </div>
-  <p class="frase-final"><em>Redescobres quem és.<br>E depois, finalmente, vives como tal.</em></p>
-
-  <div class="divisor"></div>
-
-  <!-- VEÍCULO -->
-  <div class="secao-label">O manual que nunca te deram</div>
-  <div class="veiculo-bloco">
-    <p><strong>Todos nascemos com um manual de instruções.</strong></p>
-    <p>De como a nossa energia funciona.<br>Como nos nutrimos. Como descansamos.<br>Como decidimos. Como criamos. Como amamos.</p>
-    <p>O problema é que nunca nos deram o nosso.</p>
-    <p>Crescemos a usar o manual de outra pessoa.<br>A forçar o que não encaixa.<br>A culpar-nos quando não funciona.</p>
-    <p><strong>Esse manual existe.<br>É biológico · está nos teus dados de nascimento.<br>Está no teu corpo.<br>Está à tua espera.</strong></p>
-  </div>
+  <!-- A SOLUÇÃO & MECÂNICA -->
+  <div class="secao-label">A Solução & Mecânica</div>
+  <h2 class="titulo-secao">O Rituals é o teu filtro. O fim da dúvida e a devolução da tua autoridade.</h2>
+  <p class="texto">O Rituals não é um curso, não é um programa longo e não é mais teoria para ocupar a tua mente. É a tua estrutura biológica traduzida num plano prático e pragmático.</p>
+  <p class="texto" style="font-size:16px; font-weight:500; color:var(--bordo);">O corpo decide e a mente faz a logística.</p>
+  <p class="texto">Quando passas a conhecer o teu desenho biológico original, deixas de tentar decidir pela cabeça ou pelo medo. A tua intuição e o teu corpo assumem o volante — para saberes exatamente como nutrir a tua energia, como descansar sem culpa, como gerir a tua família e como tomar as decisões que realmente funcionam no mundo real.</p>
 
 </div><!-- fecha corpo -->
 
-<!-- MENTOR — LARGURA TOTAL -->
+<!-- HISTÓRIA DE ORIGEM -->
 <div class="mentor-full">
   <div class="mentor-foto">
     <img src="rita.jpg" alt="Rita Silva Soares" onerror="this.style.display='none'">
   </div>
   <div class="mentor-texto">
-    <div class="mentor-label">Olá, eu sou a Rita</div>
-    <p class="mentor-p">Durante anos tentei tudo.</p>
-    <p class="mentor-p">Terapia. Corrida. Alimentação saudável. Deixei de fumar. Comecei a treinar. Parei. Recomeçar. A vida continuava a funcionar aos solavancos · ou era o corpo, ou era o dinheiro, ou era a relação. Nunca tudo ao mesmo tempo.</p>
-    <p class="mentor-p">Não era falta de esforço. Era ausência de um mapa que fosse meu.</p>
-    <p class="mentor-p">Quando percebi como a minha energia funciona · e a dos meus filhos · como descanso, como decido, como me movo, como crio · tudo mudou. Não de uma vez. Mas de forma irreversível.</p>
-    <p class="mentor-p">E depois, durante mais de 7 anos a servir mulheres, casais e famílias, vi acontecer o mesmo com todas as pessoas que guiei: tinham o conhecimento. Não tinham as rotinas feitas para elas.</p>
-    <p class="mentor-p"><em>Foi aí que nasceu o Rituals.</em></p>
+    <div class="mentor-label">História de Origem · Rita Silva Soares</div>
+    <p class="texto">Eu sei o que é viver em esforço. Durante anos tentei seguir o ritmo do mundo, a lógica da produção constante e as fórmulas externas de sucesso, até perceber que o meu corpo estava a pagar o preço dessa guerra.</p>
+    <p class="texto">Foi a cruzar a precisão da Neurociência, a mecânica do Human Design, a profundidade das Constelações Sistémicas e a Astrologia Psicossomática que decifrei o código do alinhamento real.</p>
+    <p class="texto"><em>O Rituals nasce dessa jornada: não para te dar mais uma teoria, mas para te devolver a simplicidade de seres quem vieste cá para ser, na tua própria vitalidade.</em></p>
   </div>
 </div>
 
-<!-- CORPO CONTINUA -->
 <div class="corpo">
 
   <div class="divisor"></div>
 
-  <!-- PROGRAMA -->
-  <h2 class="programa-titulo">O teu guia prático de rotinas</h2>
-  <p class="programa-sub">feito pelo teu mapa biológico único</p>
-  <p class="texto">Não é um curso.<br>Não é mais informação.<br>É o teu plano · gerado com a tua data de nascimento · entregue pronto a usar.</p>
-  <p class="texto">Em menos de uma hora conheces e montas o teu mapa.</p>
-  <ul class="bullet-lista">
-    <li>Saber como a tua energia funciona · e parar de lutar contra ela</li>
-    <li>Descansar de verdade · não culpa disfarçada de pausa</li>
-    <li>Tomar decisões a partir da alma · não do medo</li>
-    <li>Criar rotinas que cumpres com facilidade · porque são tuas</li>
-    <li>Estar presente com os teus filhos · não o que sobra</li>
-    <li>Mover o teu corpo do modo que lhe serve · não do que te disseram</li>
-    <li>Construir a tua marca a partir de quem és · porque o dinheiro é uma consequência natural desse alinhamento</li>
-  </ul>
+  <!-- APRESENTAÇÃO DO PROGRAMA -->
+  <div class="secao-label">Apresentação do Programa</div>
+  <h2 class="titulo-secao">O que é o Rituals?</h2>
+  <p class="texto">É o teu manual e plano de rotinas personalizado, gerado estritamente a partir dos teus dados de nascimento (data, hora e local).</p>
+  <p class="texto">Não há promessas mágicas nem tecnologias automáticas de IA a decidir por ti. O Rituals exige a tua presença: precisas de retirar uma hora focada para ti, uma única vez. Uma hora para colocares os teus dados, preencheres o teu Cartão Único, absorveres, explorares e decidires onde queres ter os teus materiais (no ecrã do telemóvel ou impresso no frigorífico).</p>
+  <p class="texto">Depois dessa hora inicial, o processo passa a ser simples: consultar a tua linha em cada tabela e aplicar esse gesto simples no teu dia a dia real.</p>
 
   <div class="divisor"></div>
 
   <!-- DELIVERABLES -->
-  <div class="secao-label">O que recebes</div>
-  <div class="cartao"><div class="cartao-nome">O teu Áudio de Boas-vindas</div><div class="cartao-desc">Para saberes como explorar o teu mapa em presença · sem te perderes na informação.</div></div>
-  <div class="cartao"><div class="cartao-nome">O teu Cartão Único</div><div class="cartao-desc">O teu manual de instruções traduzido em linguagem simples e prática.</div></div>
-  <div class="cartao"><div class="cartao-nome">O teu Mapa Energético</div><div class="cartao-desc">O mapa que te vai permitir viver a tua vida #Docaraças.</div></div>
-  <div class="cartao"><div class="cartao-nome">O teu Perfil de Vitalidade</div><div class="cartao-desc">Para aplicares o mapa ao corpo · digestão, movimento, ambiente e manifestação.</div></div>
-  <div class="cartao"><div class="cartao-nome">O Mapa das tuas Crianças</div><div class="cartao-desc">Para entenderes o sono, a forma única de processar emoções e o tipo de energia de cada filho · e parares de os gerir com o teu mapa.</div></div>
-  <div class="cartao"><div class="cartao-nome">Os teus Ciclos Lunares e Menstruais</div><div class="cartao-desc">Para viveres em ritmo · não contra ele.</div></div>
-  <div class="cartao"><div class="cartao-nome">Os teus Exercícios Neurossistémicos</div><div class="cartao-desc">Em áudio e journaling · para o que descobriste passar do papel para o corpo.</div></div>
+  <div class="secao-label">Deliverables & Camadas</div>
+  <h2 class="titulo-secao">O que recebes imediatamente ao entrar:</h2>
 
-  <!-- PRESENTES -->
-  <div class="presentes-bloco">
-    <div class="presentes-eyebrow">Os teus Presentes</div>
-    <div class="presentes-titulo">Porque o guia prático é teu · mas aplicar sozinha pode ser o que te fez parar outras vezes.</div>
-    <p class="presentes-p">Uma vez por mês, durante os teus primeiros três meses a viver o teu mapa, estamos juntas. Para tirar dúvidas, para afinar, para celebrar o que já mudou.</p>
-    <p class="presentes-p"><strong style="color:var(--creme);">Julho · Agosto · Setembro</strong></p>
-    <p class="presentes-p">Com gravação vitalícia · acesso imediato após cada sessão, para veres quando estiveres pronta.</p>
-    <div class="presente-item"><div><span class="presente-nome">Presente #1 · 3 Masterclasses ao Vivo</span><span class="presente-desc">Três sessões em grupo para aplicares com suporte, não sozinha.</span></div></div>
-    <div class="presente-item"><div><span class="presente-nome">Presente #2 · Mapa Recém-nascidos</span><span class="presente-desc">Para entenderes os teus bebés desde o primeiro dia.</span></div></div>
+  <div class="cartao">
+    <div class="cartao-num">01</div>
+    <div class="cartao-nome">Framework com Instruções & Links Diretos</div>
+    <div class="cartao-desc">O passo a passo exato para introduzires os teus dados e extraíres o teu mapa.</div>
+  </div>
+
+  <div class="cartao">
+    <div class="cartao-num">02</div>
+    <div class="cartao-nome">O teu Cartão Único de Identidade Biológica</div>
+    <div class="cartao-desc">O teu resumo executivo de vitalidade numa única página para teres sempre à mão.</div>
+  </div>
+
+  <div class="cartao">
+    <div class="cartao-num">03</div>
+    <div class="cartao-nome">O Workbook com as 12 Camadas Biológicas</div>
+    <div class="cartao-desc">Mapeamento completo do teu Tipo de Energia, Autoridade, Perfil, Digestão, Ambiente, Visão, Movimento e Dinâmica Sistémica.</div>
+  </div>
+
+  <div class="cartao">
+    <div class="cartao-num">04</div>
+    <div class="cartao-nome">4 Práticas Neurossistémicas em Áudio</div>
+    <div class="cartao-desc">Ferramentas em áudio integradas no teu guia para usares a qualquer hora quando sentires ansiedade, medo ou hesitação ao mudar uma rotina.</div>
+  </div>
+
+  <div class="cartao">
+    <div class="cartao-num">05</div>
+    <div class="cartao-nome">4 Masterclasses Gravadas</div>
+    <div class="cartao-desc">Aulas de aprofundamento entregues por e-mail com link direto para download, para assistires ao teu ritmo e guardares para sempre.</div>
+  </div>
+
+  <div class="cartao">
+    <div class="cartao-num">06</div>
+    <div class="cartao-nome">Guias Complementares de Suporte</div>
+    <div class="cartao-desc">• Perfil de Vitalidade & Movimento Físico<br>• Tabela de Ciclos Lunares & Menstruais<br>• Mapa do Desenho dos Filhos & Recém-Nascidos</div>
+  </div>
+
+  <div class="cartao" style="border-color:var(--bordo); background:rgba(92,36,52,0.04);">
+    <div class="cartao-num" style="color:var(--bordo);">07 · PRESENTE ESPECIAL</div>
+    <div class="cartao-nome">3 Meses de Acesso ao Substack Pago</div>
+    <div class="cartao-desc">Para apoiar o teu processo contínuo de integração e expansão, recebes 3 meses de acesso gratuito ao meu Substack privado de Rita Silva Soares, com conteúdos exclusivos sobre regulação do sistema nervoso, dinâmicas familiares e vida alinhada.</div>
   </div>
 
   <div class="divisor"></div>
 
-  <!-- PARA QUEM É -->
-  <div class="secao-label">Para quem é</div>
-  <div class="bloco-creme">
-    <h3>É para ti se...</h3>
-    <ul>
-      <li>És mulher ou mãe criativa que quer corpo, família e marca · sem sacrificar nada</li>
-      <li>Já tentaste outras abordagens e sentes que falta algo que seja teu</li>
-      <li>Estás disposta a olhar para ti com honestidade e aplicar o que descobres</li>
-      <li>Queres rotinas que funcionam com facilidade · não por obrigação</li>
-    </ul>
-  </div>
-  <div class="bloco-creme">
-    <h3>Não é para ti se...</h3>
-    <ul>
-      <li>Procuras uma solução rápida sem te envolveres com o processo</li>
-      <li>Não estás disposta a olhar para ti com honestidade</li>
-      <li>Queres que alguém tome as decisões por ti</li>
-      <li>Esperas resultados sem aplicar o que descobres</li>
-    </ul>
-  </div>
+  <!-- PARA QUEM É & NÃO É -->
+  <div class="secao-label">Adequação</div>
+  <h2 class="titulo-secao">Para quem É & Para quem NÃO É</h2>
 
-  <div class="divisor"></div>
+  <table class="tabela-para-quem">
+    <thead>
+      <tr>
+        <th>Para quem É o Rituals:</th>
+        <th>Para quem NÃO É o Rituals:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pessoas que querem assumir a responsabilidade pessoal pela sua vitalidade e pelas suas escolhas.</td>
+        <td>Quem procura pílulas mágicas, fórmulas milagrosas ou resultados sem qualquer presença.</td>
+      </tr>
+      <tr>
+        <td>Pessoas exaustas de seguir conselhos genéricos e que procuram o seu próprio manual.</td>
+        <td>Quem quer uma inteligência artificial a interpretar ou a decidir a vida por si.</td>
+      </tr>
+      <tr>
+        <td>Mães, pais, casais e profissionais que querem simplificar a vida, eliminar o excesso e criar harmonia familiar.</td>
+        <td>Quem procura mais um curso longo para acumular teoria ou encher a lista de tarefas.</td>
+      </tr>
+      <tr>
+        <td>Quem quer alinhar a saúde, o corpo, as relações e o negócio na direção do menor esforço.</td>
+        <td>Quem quer continuar a culpar o externo e recusa olhar para o seu próprio corpo.</td>
+      </tr>
+    </tbody>
+  </table>
 
-  <!-- RESUMO + PREÇO -->
+  <!-- RESUMO E INVESTIMENTO -->
   <div class="resumo-bloco">
-    <div class="resumo-label">Resumindo tudo o que recebes</div>
-    <div class="resumo-item"><span class="resumo-nome">O teu Áudio de Boas-vindas</span><span class="resumo-valor">27€</span></div>
-    <div class="resumo-item"><span class="resumo-nome">O teu Cartão Único</span><span class="resumo-valor">47€</span></div>
-    <div class="resumo-item"><span class="resumo-nome">O teu Mapa Energético</span><span class="resumo-valor">111€</span></div>
-    <div class="resumo-item"><span class="resumo-nome">O teu Perfil de Vitalidade</span><span class="resumo-valor">222€</span></div>
-    <div class="resumo-item"><span class="resumo-nome">O Mapa das tuas Crianças</span><span class="resumo-valor">77€</span></div>
-    <div class="resumo-item"><span class="resumo-nome">Os teus Ciclos Lunares e Menstruais</span><span class="resumo-valor">47€</span></div>
-    <div class="resumo-item"><span class="resumo-nome">Os teus Exercícios Neurossistémicos</span><span class="resumo-valor">99€</span></div>
-    <div class="resumo-item"><span class="resumo-nome">Presente #1 · 3 Masterclasses ao Vivo</span><span class="resumo-valor">297€</span></div>
-    <div class="resumo-item"><span class="resumo-nome">Presente #2 · Mapa Recém-nascidos</span><span class="resumo-valor">77€</span></div>
-    <div class="resumo-total"><span class="resumo-total-label">Valor total</span><span class="resumo-total-valor">mais de 1.000€</span></div>
-    <div class="resumo-investimento">
-      <div class="resumo-inv-label">O teu investimento hoje</div>
-      <div class="resumo-inv-valor">27€</div>
-      <a href="https://payhip.com/b/ZwzOn" class="btn-principal" style="text-align:center;">Quero o meu mapa · 27€ pagamento único →</a>
+    <div class="resumo-label">Resumo do Investimento</div>
+    <ul class="resumo-lista">
+      <li>Manual Biológico Personalizado (12 Camadas)</li>
+      <li>Cartão Único de Identidade Biológica</li>
+      <li>4 Práticas Neurossistémicas em Áudio</li>
+      <li>4 Masterclasses Gravadas em Vídeo</li>
+      <li>Mapas de Suporte para Filhos e Família</li>
+      <li>3 Meses de Acesso ao Substack Pago</li>
+      <li>Acesso Vitalício e Permanente</li>
+    </ul>
+    <div class="resumo-preço">
+      <p style="font-size:11px; letter-spacing:2px; text-transform:uppercase; opacity:0.7; margin-bottom:8px;">Pagamento Único · Sem Subscrições</p>
+      <div class="resumo-valor">27€</div>
+      <p style="font-size:12px; opacity:0.8; margin-bottom:24px;">Sem mensalidades, sem custos escondidos, sem prazos de lançamento. Acesso imediato e vitalício a todo o teu material.</p>
+      <a href="https://payhip.com/b/ZwzOn" class="btn-principal">Quero o meu mapa · 27€ pagamento único →</a>
     </div>
   </div>
 
-  <div class="preco-bloco">
-    <div class="preco-label">Valor de investimento</div>
-    <div class="preco">27€</div>
-    <p class="preco-urgencia">Às primeiras 500 mulheres ou até 27 de julho</p>
-    <p class="preco-nota">44€ às primeiras 3000 mulheres ou até 27 de agosto · Preço final: 77€</p>
-    <a href="https://payhip.com/b/ZwzOn" class="btn-bordo" style="text-align:center;">Quero o meu mapa · 27€ pagamento único →</a>
+  <!-- GARANTIA -->
+  <div style="background:#fff; border:1px solid var(--areia); padding:28px; margin:32px 0;">
+    <h3 style="font-family:'Cormorant Garamond',serif; font-size:22px; color:var(--bordo); margin-bottom:12px;">Garantia & Responsabilidade Pessoal</h3>
+    <p class="texto">O Rituals é um produto digital de entrega e consumo imediato: não há devoluções nem reembolso.</p>
+    <p class="texto">A responsabilidade pessoal é um dos meus valores fundamentais e está na base de tudo o que crio e entrego. Entrar no Rituals é uma decisão consciente de te assumires como a verdadeira autoridade da tua própria vida.</p>
+    <p class="texto" style="margin-bottom:0;">Se tiveres dúvidas no teu processo, podes sempre enviar por email, dentro do meu espaço, tempo e limites.</p>
   </div>
 
   <div class="divisor"></div>
 
-  <!-- FAQ -->
-  <div class="secao-label">Perguntas frequentes</div>
+  <!-- FAQS -->
+  <div class="secao-label">Perguntas Frequentes</div>
+  <h2 class="titulo-secao">Esclarece as tuas dúvidas</h2>
+
   <div class="faq-item">
-    <p class="faq-p">E se for muita informação e eu não conseguir aplicar sozinha?</p>
-    <p class="faq-r">É exactamente para isso que existem as 3 masterclasses ao vivo · para aplicares com suporte, não sozinha. Em Julho, Agosto e Setembro estamos juntas para tirar dúvidas e afinar a aplicação.</p>
+    <div class="faq-p">O que muda efetivamente na minha vida prática depois do Rituals?</div>
+    <div class="faq-r">Muda a tua vida pelo fim da guerra mental constante e do questionamento diário. Na prática, deixas de duvidar de ti. Quando o teu corpo e a tua intuição te dão um sinal claro sobre a tua alimentação, o teu movimento, a forma como decides ou como lidas com um filho num momento de exaustão, deixas de tentar resolver pela cabeça ou pelo padrão dos outros.<br><br>A mente deixa de ser a dona das decisões e passa a ser usada para o que realmente serve: a logística do dia a dia, a criar a estrutura e os passos práticos. Mas quem decide é sempre o teu corpo, que nasceu para ser vital — sem culpa, sem hesitação e sem esforço.<br><br>A mudança prática é teres as rotinas e escolhas diárias alinhadas com o teu potencial máximo no teu corpo, na tua família, nas tuas relações e no teu negócio. E o que é esse potencial máximo? São as decisões certas para ti. Aquelas que realmente funcionam no mundo real.</div>
   </div>
+
   <div class="faq-item">
-    <p class="faq-p">Já tenho tanta informação. Isto vai ser mais do mesmo?</p>
-    <p class="faq-r">O Rituals não é informação. É o teu plano · feito pelo teu mapa único, definido pela tua data exacta de nascimento. A diferença entre saber e viver não está em mais conteúdo. Está em ter o teu manual.</p>
+    <div class="faq-p">Como é que a mudança acontece no dia a dia? O que vou fazer ao longo do processo?</div>
+    <div class="faq-r">
+      A mudança acontece em quatro passos simples e no teu próprio ritmo:
+      <ol>
+        <li><strong>Chegas:</strong> Ouves o áudio de boas-vindas e preenches o teu Cartão Único com os teus dados de nascimento para descobrir o teu mapa.</li>
+        <li><strong>Conheces-te:</strong> Lês as 12 camadas do teu mapa biológico no teu workbook personalizado para entenderes a tua energia, a tua autoridade, a tua digestão e todos os teus dados. Podes sublinhar, imprimir para colocar no frigorífico ou guardar um ecrã no telemóvel para teres sempre à mão.</li>
+        <li><strong>Aplicas ao corpo e à família:</strong> Consultas as tabelas práticas para alinhares o teu movimento físico, os teus ciclos e o desenho de cada um dos teus filhos.</li>
+        <li><strong>Passas do papel para o corpo:</strong> Ouves as 4 práticas neurossistémicas em áudio e assistes às 4 masterclasses gravadas no momento em que precisares de suporte.</li>
+      </ol>
+      Não tens de estudar horas a fio nem fazer exames. O processo consiste em consultar a tua linha em cada tabela e aplicar esse gesto simples no teu dia a dia real — um gesto de cada vez, na ordem ou camada que escolheres.
+    </div>
   </div>
+
   <div class="faq-item">
-    <p class="faq-p">Tenho suporte se tiver dúvidas?</p>
-    <p class="faq-r">Sim · nas 3 masterclasses ao vivo. Estou também disponível por email para esclarecer dúvidas dentro do meu espaço, tempo e limites.</p>
+    <div class="faq-p">Em quanto tempo começo a sentir diferenças?</div>
+    <div class="faq-r">Começas a sentir a diferença no próprio dia em que preenches o teu Cartão Único e aplicas o primeiro gesto simples porque aquilo que lês é diferente de tudo o que te disseram até hoje. Vais sentir diferença porque começas a reconhecer-te, mesmo que surja algum desconforto ou ansiedade inicial. A mente vai querer proteger-te do desconhecido e dizer-te que não, mas tu passas a ver a verdade: acedes diretamente à causa do esgotamento, de estares a forçar o que não funciona ou a decidir pelo medo, mesmo que antes não tivesses consciência disso.<br><br>Não significa que vá mudar logo tudo de uma vez. O Rituals dá-te a clareza exata de qual é o teu próximo passo. Só precisas de saber o próximo passo. À medida que repetes, as mudanças físicas e relacionais vão-se consolidando no teu próprio ritmo e sem pressa.</div>
   </div>
+
   <div class="faq-item">
-    <p class="faq-p">Há garantia de devolução?</p>
-    <p class="faq-r">O Rituals é um produto digital de entrega e consumo imediato · não há reembolsos. A responsabilidade pessoal é um dos meus valores e está na base de tudo o que entrego.</p>
+    <div class="faq-p">A transformação é mais interna (forma como sinto as coisas) ou também se reflete na relação com o mundo e com os outros?</div>
+    <div class="faq-r">Acontece obrigatoriamente nas duas frentes, até porque uma não existe sem a outra. No teu próprio mapa, através do teu perfil, percebes exatamente essa dupla dimensão: a linha que mostra como te sentes e te relacionas contigo por dentro e a linha que mostra como te relacionas com o outro e com o mundo por fora.<br><br>A grande viragem do Rituals é que deixas de depender do externo para mudar o interno: és tu que passas a codificar e a ativar essa mudança. Quando o teu corpo se autorregula por dentro, a transformação reflete-se na realidade física, no teu dia a dia, nas rotinas, naquilo que vês, na forma como te relacionas com os outros e na forma como os outros passam a relacionar-se contigo: na tua família, no teu par, nos teus relacionamentos, nos teus filhos e no teu negócio.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-p">A mudança é para sempre? Há algum processo que tenha de fazer para manter a mudança?</div>
+    <div class="faq-r">Não há um processo novo a aprender, porque a mudança consolida-se com a repetição. O regresso é sempre ao teu Tipo de Energia e aos básicos. Sempre que te desviares, passares por um momento mais intenso ou um hábito antigo voltar, volta-se ao início com gentileza, aos básicos do teu mapa e às ferramentas práticas neurossistémicas para reajustar o teu veículo. À medida que repetes, aumentas a capacidade do teu corpo.<br><br>Por outro lado, a mudança é viva porque a impermanência é a única constante da vida. É bom e saudável que a forma como vives hoje não seja igual daqui a 10 anos. O Rituals é a tua base estrutural para a vida inteira.<br><br>E para quem quer ir mais fundo nesse processo contínuo de expansão em comunidade, criei dois contentores de profundidade: o Substack pago (3 meses incluídos) e os Eventos e Grupos de Constelação ao Vivo.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-p">Quanto tempo preciso para me dedicar a conhecer o Rituals?</div>
+    <div class="faq-r">O Rituals não promete fórmulas mágicas nem atalhos preguiçosos. Não é uma tecnologia automática onde uma inteligência artificial decide ou interpreta a vida por ti. O Rituals foi desenhado para ser fluido, prático e pragmático.<br><br>Exige a tua presença: precisas de retirar uma hora focada para ti, uma única vez. Uma hora para colocares os teus dados, preencheres o teu Cartão Único, absorveres, explorares e decidires como queres organizar os teus materiais no dia a dia.<br><br>Depois dessa hora inicial, não tens de estudar gramas de teoria nem somar tarefas à tua agenda: o processo passa a ser consultar a tua linha em cada tabela e aplicar esse gesto no teu dia a dia real.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-p">Sinto que já tenho coisas suficientes na minha vida e não preciso de adicionar mais novidades ou experiências agora.</div>
+    <div class="faq-r">A verdade é que podes ter coisas suficientes, mas podes não ter as coisas certas. O Rituals é uma novidade, sim, mas não é uma experiência para acumular nem mais uma tarefa para encher a tua lista. Se sentes sobrecarga, a solução nunca é continuar a somar. Uma vida melhor não é sobre acrescentar: é sobre deixar ir o que não funciona. O Rituals elimina o excesso e o ruído.<br><br>Na prática, continuas a fazer o que já fazes todos os dias — comer, mover o corpo, trabalhar, descansar e relacionar-te com a tua família —, mas passas a fazê-lo alinhado com quem vieste cá para ser, na direção da tua fluidez, do menor esforço, da vitalidade, do crescimento e da abundância. Tal como um rio: um rio não pede licença nem ocupa espaço à força para continuar a fluir. O Rituals é a simplificação da tua vida, não a complicação.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-p">Que formato tem exatamente o Rituals? É um curso, um programa ou uma comunidade?</div>
+    <div class="faq-r">
+      O Rituals não é um curso, não é um programa e não é uma comunidade. É o teu manual e plano de rotinas biológico personalizado, gerado estritamente com os teus dados de nascimento.
+      <ul>
+        <li><strong>100% Online e de Acesso Imediato:</strong> Assim que entras, recebes as instruções, o framework e os links diretos de onde ir buscar o teu mapa com os teus dados.</li>
+        <li><strong>O teu Cartão Único e Workbook:</strong> Preenches o teu Cartão Único e acedes ao Workbook com as 12 camadas dos teus mapas. O processo é tão simples como ir à tua linha e procurar o teu dado específico.</li>
+        <li><strong>Sem Diretos nem Prazos:</strong> Não há sessões em direto nem horários rígidos. As 4 práticas neurossistémicas em áudio já estão dentro do teu guia para usares em qualquer lugar. As 4 Masterclasses vão chegar gravadas por e-mail com link direto para download, acessíveis em qualquer dispositivo móvel.</li>
+        <li><strong>Acesso para Sempre:</strong> O material é teu para toda a vida. Não expira nem perdes o acesso.</li>
+        <li><strong>Materiais Práticos de Apoio:</strong> Recebes o teu Cartão Único, o Workbook das 12 Camadas, o Perfil de Vitalidade & Movimento, os Ciclos Lunares & Menstruais, o Mapa das Crianças, o Mapa dos Recém-nascidos e os 3 meses de acesso ao Substack pago.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-p">Tenho suporte se tiver dúvidas ao longo do caminho?</div>
+    <div class="faq-r">Sim, podes colocar as tuas dúvidas por email, onde respondo dentro do meu espaço, tempo e limites.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-p">Há garantia de devolução ou reembolso?</div>
+    <div class="faq-r">O Rituals é um produto digital de acesso e consumo imediato, por isso não há devoluções. A responsabilidade pessoal é um valor estrutural em tudo o que entrego.</div>
   </div>
 
   <div class="divisor"></div>
 
   <!-- CARTA FINAL -->
   <div class="carta-bloco">
-    <div class="carta-label">Eu sei</div>
-    <p class="carta-p">Vês imensas coisas, ouves outras tantas e parece que, por muito próximo que chegues, nunca paras de tentar e te esforçar.</p>
-    <p class="carta-p">É aquela sensação: <em>está mesmo aqui e fico sempre aquém.</em> Ou o <em>já consegui mas não consigo manter</em> e parece que estás sempre a começar de novo
+    <div class="secao-label">Carta Final</div>
+    <p class="carta-p" style="font-family:'Cormorant Garamond',serif; font-size:28px; font-style:italic; color:var(--bordo);">Eu sei.</p>
+    <p class="carta-p">Eu sei o que é viver em sobressalto, a tentar encaixar o corpo, a família e a vida em modelos que nunca foram desenhados para nós. Eu sei o peso de tentar responder a tudo pela cabeça, na força de vontade, enquanto o corpo pede descanso, conexão e verdade.</p>
+    <p class="carta-p">O Rituals não nasce para te dar mais uma teoria ou para te ensinar quem deves ser. Nasce para te devolver o teu próprio mapa, para que possas, finalmente, pousar o esforço e viver a partir do teu desenho original, na tua vitalidade, na tua casa e nas tuas escolhas.</p>
+    <p class="carta-p"><strong>O teu lugar de autoridade sempre esteve em ti. O mapa está pronto.</strong></p>
+    
+    <div class="assinatura">
+      Com amor e presença,<br>
+      <strong>Rita Silva Soares</strong><br>
+      <span style="font-size:16px; font-style:normal; color:var(--texto);">Projetora Esplénica 2/4<br>Fundadora do movimento #Docaraças e do Embodiment by Design</span>
+    </div>
+  </div>
+
+  <!-- BOTÃO FINAL -->
+  <div style="background:var(--bordo); padding:48px 32px; text-align:center; margin-top:32px;">
+    <h3 style="font-family:'Cormorant Garamond',serif; font-size:28px; font-style:italic; color:var(--creme); margin-bottom:12px;">O teu mapa está à tua espera</h3>
+    <p style="font-size:13px; color:rgba(245,237,228,0.75); margin-bottom:28px;">27€ · pagamento único · acesso imediato e vitalício</p>
+    <a href="https://payhip.com/b/ZwzOn" class="btn-principal">Quero o meu mapa · 27€ pagamento único →</a>
+  </div>
+
+</div><!-- fecha corpo -->
+
+<div class="rodape">Embodiment by Design · Rita Silva Soares · 2026</div>
+
+</body>
+</html>
